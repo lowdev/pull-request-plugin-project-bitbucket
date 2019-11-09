@@ -43,13 +43,6 @@ public class ProjectServlet extends HttpServlet {
             return;
         }
 
-        boolean isSettings = false;
-        if (components.length == 3 && "settings".equalsIgnoreCase(components[2])) {
-            isSettings = true;
-        }
-
-        String template = isSettings ? "plugin.example.projectSettings" : "plugin.example.project";
-
-        baseServlet.render(resp, template, ImmutableMap.<String, Object>of("project", project));
+        baseServlet.render(resp, "plugin.template.pullRequestProject", ImmutableMap.<String, Object>of("project", project));
     }
 }

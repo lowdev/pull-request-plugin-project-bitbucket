@@ -1,12 +1,13 @@
 package eu.lowentropy.servlet;
 
-import com.atlassian.soy.renderer.SoyException;
-import com.atlassian.soy.renderer.SoyTemplateRenderer;
+import java.io.IOException;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.Map;
+
+import com.atlassian.soy.renderer.SoyException;
+import com.atlassian.soy.renderer.SoyTemplateRenderer;
 
 public class BaseServlet {
 
@@ -20,7 +21,7 @@ public class BaseServlet {
         resp.setContentType("text/html;charset=UTF-8");
         try {
             soyTemplateRenderer.render(resp.getWriter(),
-                    "com.atlassian.bitbucket.server.bitbucket-example-plugin:example-soy",
+                    "eu.lowentropy.pull-request-project-bitbucket-plugin:base-template-soy",
                     templateName,
                     data);
         } catch (SoyException e) {

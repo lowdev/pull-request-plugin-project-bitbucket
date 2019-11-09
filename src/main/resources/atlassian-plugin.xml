@@ -24,19 +24,19 @@
     <!-- Servlets -->
     <servlet name="Project Servlet" key="project-servlet" class="eu.lowentropy.servlet.ProjectServlet">
         <description key="project-servlet.description">The Project Servlet Plugin</description>
-        <url-pattern>/example/project/*</url-pattern>
+        <url-pattern>/pull-request/project/*</url-pattern>
     </servlet>
 
     <web-item key="project-plugin-tab" name="Project navigation tab" section="atl.project.nav" weight="35">
-        <label>My plugin</label>
-        <link>/plugins/servlet/example/project/${project.key}</link>
+        <label>Open pull requests</label>
+        <link>/plugins/servlet/pull-request/project/${project.key}</link>
         <tooltip>Hooray, we have a tab!</tooltip>
         <!-- optional style for the icon: see https://design.atlassian.com/2.0/product/foundations/iconography for a list of available images -->
         <param name="iconClass" value="aui-icon-small aui-iconfont-edit" />
     </web-item>
 
     <!-- Client web resources -->
-    <client-resource key="example-soy" name="Example Soy Templates">
+    <client-resource key="base-template-soy" name="Project Soy Templates">
         <directory location="/templates/"/>
     </client-resource>
 
