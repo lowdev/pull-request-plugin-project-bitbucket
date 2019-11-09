@@ -1,0 +1,19 @@
+{namespace plugin.example}
+
+/**
+ * @param project Project object
+ */
+{template .project}
+<html>
+<head>
+    <meta name="decorator" content="bitbucket.project.general">
+    <meta name="projectKey" content="{$project.key}">
+    <meta name="activeTab" content="project-plugin-tab">
+    <title>{$project.key} / Example Tab</title>
+</head>
+<body>
+    <h3>Project: {$project.key}</h3>
+    <p>Welcome to my plugin tab in the project page.</p>
+</body>
+</html>
+{/template}

@@ -1,0 +1,43 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="pull-request-project-bitbucket-plugin"/>
+
+    <!-- add our web resources -->
+    <web-resource key="pull-request-project-bitbucket-plugin-resources" name="pull-request-project-bitbucket-plugin Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+
+        <resource type="download" name="pull-request-project-bitbucket-plugin.css" location="/css/pull-request-project-bitbucket-plugin.css"/>
+        <resource type="download" name="pull-request-project-bitbucket-plugin.js" location="/js/pull-request-project-bitbucket-plugin.js"/>
+        <resource type="download" name="images/" location="/images"/>
+
+        <context>pull-request-project-bitbucket-plugin</context>
+    </web-resource>
+
+    <!-- Servlets -->
+    <servlet name="Project Servlet" key="project-servlet" class="eu.lowentropy.servlet.ProjectServlet">
+        <description key="project-servlet.description">The Project Servlet Plugin</description>
+        <url-pattern>/example/project/*</url-pattern>
+    </servlet>
+
+    <web-item key="project-plugin-tab" name="Project navigation tab" section="atl.project.nav" weight="35">
+        <label>My plugin</label>
+        <link>/plugins/servlet/example/project/${project.key}</link>
+        <tooltip>Hooray, we have a tab!</tooltip>
+        <!-- optional style for the icon: see https://design.atlassian.com/2.0/product/foundations/iconography for a list of available images -->
+        <param name="iconClass" value="aui-icon-small aui-iconfont-edit" />
+    </web-item>
+
+    <!-- Client web resources -->
+    <client-resource key="example-soy" name="Example Soy Templates">
+        <directory location="/templates/"/>
+    </client-resource>
+
+</atlassian-plugin>
