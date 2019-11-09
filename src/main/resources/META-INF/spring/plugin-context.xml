@@ -13,4 +13,6 @@
 
     <osgi:reference id="soyTemplateRenderer" interface="com.atlassian.soy.renderer.SoyTemplateRenderer"/>
     <osgi:reference id="projectService" interface="com.atlassian.bitbucket.project.ProjectService"/>
+    <osgi:reference id="repositoryService" interface="com.atlassian.bitbucket.repository.RepositoryService"/>
+    <osgi:reference id="pullRequestService" interface="com.atlassian.bitbucket.pull.PullRequestService"/>
 </beans>
