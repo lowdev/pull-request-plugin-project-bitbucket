@@ -1,0 +1,27 @@
+.aui-iconfont-arrow-right {
+    margin: 0 10px;
+    color: #a5adba;
+    vertical-align: middle;
+}
+
+.pull-request-target-branch {
+    flex: 1 1 auto;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    max-width: 100%;
+    display: inline-block;
+    line-height: 16px;
+}
+
+.ref-label {
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: top;
+    max-width: 100%;
+    margin: 0;
+    line-height: initial;
+}

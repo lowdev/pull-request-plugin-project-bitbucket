@@ -10,10 +10,46 @@
     <meta name="projectKey" content="{$project.key}">
     <meta name="activeTab" content="project-plugin-tab">
     <title>{$project.key} / Example Tab</title>
+    {webResourceManager_requireResource('eu.lowentropy.pull-request-project-bitbucket-plugin:pull-request-project-bitbucket-plugin-resources')}
 </head>
 <body>
     <h3>Project: {$project.key}</h3>
-    <p>Welcome to my plugin tab in the project page.</p>
+
+    <table class="aui paged-table pull-requests-table" data-last-updated="1573411663853">
+        <thead>
+            <tr class="pull-request-row">
+                <th class="summary" scope="col" colspan="2">Summary</th>
+                <th class="project" scope="col">Poject</th>
+                <th class="build-status-pr-list-col web-section-column" title="Builds" scope="col">Builds</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="pull-request-row focused">
+                <td class="author-avatar">
+                    <span class="user-avatar aui-avatar aui-avatar-medium" data-username="admin">
+                        <span class="aui-avatar-inner">
+                            <img alt="Administrator" src="http://www.gravatar.com/avatar/e64c7d89f26bd1972efa854d13d7dd61.jpg?s=64&amp;d=mm" original-title="Administrator">
+                        </span>
+                    </span>
+                </td>
+                <td class="summary" data-pull-request-id="3" data-username="admin">
+                    <div class="title-and-target-branch">
+                        <a class="pull-request-title" title="a modification on branch basic_branching" href="/bitbucket/projects/PROJECT_1/repos/rep_1/pull-requests/3/overview">a modification on branch basic_branching</a>
+                        <span class="aui-icon aui-icon-small aui-iconfont-arrow-right"></span>
+                        <span class="pull-request-target-branch"><span class="ref-label">
+                        <span class="ref branch"><span class="name" aria-label="branch branch_mod_merge">branch_mod_merge</span></span>
+                        </span>
+                        </span>
+                    </div>
+                    <div class="pr-author-number-and-timestamp"><span>Administrator - #3, </span>
+                        <time title="09 November 2019 10:52 PM" datetime="2019-11-09T22:52:38+0100">last updated yesterday</time>
+                    </div>
+                </td>
+                <td class="project"></td>
+                <td class="build"></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
 {/template}
